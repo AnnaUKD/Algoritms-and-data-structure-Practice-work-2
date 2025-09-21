@@ -1,4 +1,5 @@
 import numpy as np
+import time
 # Завдання 1
 
 length_of_array = int(input('Enter the length of array: '))
@@ -10,6 +11,7 @@ for index, element in enumerate(new_array):
 # Завдання 2
 
 sort_direction_for_bubble_sort = input('Now we will sort the array with Bubble sort. Enter the direction of sort(ascending or descending): ')
+start_time = time.time()
 for i in range(length_of_array - 1):
     for j in range(length_of_array - i - 1):
         if new_array[j] > new_array[j + 1] and sort_direction_for_bubble_sort == 'ascending':
@@ -18,10 +20,16 @@ for i in range(length_of_array - 1):
             new_array[j], new_array[j + 1] = new_array[j + 1], new_array[j]
 
 print(new_array)
+end_time = time.time()
+duration = end_time - start_time
+print('Duration of this method is: ', duration)
 
 # Завдання 3
 
+
 sort_direction_for_insertion_sort = input('Now we will sort the array with Insertion sort. Enter the direction of sort(ascending or descending): ')
+start_time1 = time.time()
+
 for i in range(1, length_of_array):
     current_value = new_array[i]
     j = i - 1
@@ -35,11 +43,14 @@ for i in range(1, length_of_array):
     new_array[j + 1] = current_value
 
 print(new_array)
+end_time1 = time.time()
+duration1 = end_time1 - start_time1
+print('Duration of this method is: ', duration1)
 
 # Завдання 4
 
 sort_direction_for_selection_sort = input('Now we will sort the array with Selection sort. Enter the direction of sort(ascending or descending): ')
-
+start_time2 = time.time()
 for i in range(length_of_array - 1):
     min_index = i
     for j in range(i + 1, length_of_array):
@@ -53,3 +64,7 @@ for i in range(length_of_array - 1):
     new_array[i], new_array[min_index] = new_array[min_index], new_array[i]
 
 print(new_array)
+
+end_time2 = time.time()
+duration2 = end_time2 - start_time2
+print('Duration of this method is: ', duration2)
